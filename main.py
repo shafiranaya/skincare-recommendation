@@ -1,5 +1,19 @@
 import pandas as pd
 import numpy as np
+import pickle
+import joblib
+
+def get_cluster_joblib(input_list):
+    to_predict_list = np.array(input_list).reshape(1,20)
+    loaded_model = joblib.load("kmeans.joblib")
+    result = loaded_model.predict(to_predict_list)
+    return result[0]
+
+def get_cluster(input_list):
+    input_list = np.array(input_list).reshape(1,20)
+    loaded_model = pickle.load(open("kmeans.pkl","rb"))
+    result = loaded_model.predict(input_list)
+    return result[0]
 
 def get_recommendation(product_name_search):
     df = pd.read_csv('beautyhaulclean.csv')

@@ -1,0 +1,439 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/combine/npm/bootswatch@5.1.3/dist/quartz/bootstrap.min.css,npm/bootswatch@5.1.3/dist/quartz/bootstrap.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"></script>
+    
+    <title>Lip Product Recommendation</title>
+</head>
+<body>
+    <!-- title -->
+    <div class="text-secondary px-4 py-2 text-center">
+      <div class="py-1">
+        <h1 class="display-5 fw-bold">Lip Product Recommendation</h1>
+      </div>
+    </div>
+
+    <div class="container">
+        <form method="POST" enctype="multipart/form-data">
+            <!-- <fieldset class="row">
+                <legend class="col-form-label col-sm-4 pt-0">Brand apa yang kamu inginkan?</legend>
+                <div class="col-sm-8">
+                  <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="radio" name="brand" id="wardah" value="wardah" checked>
+                    <label class="form-check-label" for="wardah">
+                      Wardah
+                    </label>
+                  </div>
+                  <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="radio" name="brand" id="emina" value="emina">
+                    <label class="form-check-label" for="emina">
+                      Emina
+                    </label>
+                  </div>
+                  <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="radio" name="brand" id="makeover" value="makeover">
+                    <label class="form-check-label" for="makeover">
+                      Make Over
+                    </label>
+                  </div>
+                </div>
+            </fieldset> -->
+            <!-- <fieldset class="row">
+                <legend class="col-form-label col-sm-4 pt-0">Tipe produk apa yang ingin kamu beli?</legend>
+                <div class="col-sm-4">
+                  <select class="form-select" name="product_type">
+                    <option selected>Pilih...</option>
+                    <option value="lipstick">Lipstick</option>
+                    <option value="lipcream">Lipcream</option>
+                    <option value="lipmatte">Lipmatte</option>
+                    <option value="lipgloss">Lipgloss</option>
+                    <option value="liptint">Liptint</option>
+                    <option value="lipbalm">Lipbalm</option>
+                    <option value="liquidlipstick">Liquid Lipstick</option>
+                    <option value="lippencil">Lip Pencil</option>
+                  </select>
+                  </div>
+            </fieldset> -->
+
+            <fieldset class="row">
+                <legend class="col-form-label col-sm-4 pt-0">Apakah kamu membutuhkan produk yang dapat digunakan setiap hari?</legend>
+                <div class="col-sm-8">
+                  <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="radio" name="dailyuse" id="dailyuse_yes" value="1" checked>
+                    <label class="form-check-label" for="dailyuse_yes">
+                      Ya
+                    </label>
+                  </div>
+                  <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="radio" name="dailyuse" id="dailyuse_no" value="0">
+                    <label class="form-check-label" for="dailyuse_no">
+                      Tidak
+                    </label>
+                  </div>
+                </div>
+            </fieldset>
+            <fieldset class="row">
+                <legend class="col-form-label col-sm-4 pt-0">Apakah kamu membutuhkan produk yang ringan saat digunakan?</legend>
+                <div class="col-sm-8">
+                  <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="radio" name="lightweight" id="lightweight_yes" value="1" checked>
+                    <label class="form-check-label" for="lightweight_yes">
+                      Ya
+                    </label>
+                  </div>
+                  <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="radio" name="lightweight" id="lightweight_no" value="0">
+                    <label class="form-check-label" for="lightweight_no">
+                      Tidak
+                    </label>
+                  </div>
+                </div>
+            </fieldset>
+            <fieldset class="row">
+              <legend class="col-form-label col-sm-4 pt-0">Apakah kamu membutuhkan produk yang powdery?</legend>
+              <div class="col-sm-8">
+                <div class="form-check form-check-inline">
+                  <input class="form-check-input" type="radio" name="powdery" id="powdery_yes" value="1" checked>
+                  <label class="form-check-label" for="powdery_yes">
+                    Ya
+                  </label>
+                </div>
+                <div class="form-check form-check-inline">
+                  <input class="form-check-input" type="radio" name="powdery" id="powdery_no" value="0">
+                  <label class="form-check-label" for="powdery_no">
+                    Tidak
+                  </label>
+                </div>
+              </div>
+            </fieldset>
+            <fieldset class="row">
+                <legend class="col-form-label col-sm-4 pt-0">Apakah produk harus bisa digunakan dengan produk lainnya?</legend>
+                <div class="col-sm-8">
+                  <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="radio" name="layered" id="layered_yes" value="1" checked>
+                    <label class="form-check-label" for="layered_yes">
+                      Ya
+                    </label>
+                  </div>
+                  <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="radio" name="layered" id="layered_no" value="0">
+                    <label class="form-check-label" for="layered_no">
+                      Tidak
+                    </label>
+                  </div>
+                </div>
+            </fieldset>
+            <fieldset class="row">
+              <legend class="col-form-label col-sm-4 pt-0">Apakah kamu membutuhkan produk yang lembut dan halus?</legend>
+              <div class="col-sm-8">
+                <div class="form-check form-check-inline">
+                  <input class="form-check-input" type="radio" name="smooth" id="smooth_yes" value="1" checked>
+                  <label class="form-check-label" for="smooth_yes">
+                    Ya
+                  </label>
+                </div>
+                <div class="form-check form-check-inline">
+                  <input class="form-check-input" type="radio" name="smooth" id="smooth_no" value="0">
+                  <label class="form-check-label" for="smooth_no">
+                    Tidak
+                  </label>
+                </div>
+              </div>
+            </fieldset>
+            <fieldset class="row">
+              <legend class="col-form-label col-sm-4 pt-0">Apakah kamu membutuhkan produk dengan hasil akhir creamy?</legend>
+              <div class="col-sm-8">
+                <div class="form-check form-check-inline">
+                  <input class="form-check-input" type="radio" name="creamy" id="creamy_yes" value="1" checked>
+                  <label class="form-check-label" for="creamy_yes">
+                    Ya
+                  </label>
+                </div>
+                <div class="form-check form-check-inline">
+                  <input class="form-check-input" type="radio" name="creamy" id="creamy_no" value="0">
+                  <label class="form-check-label" for="creamy_no">
+                    Tidak
+                  </label>
+                </div>
+              </div>
+            </fieldset>
+            <fieldset class="row">
+              <legend class="col-form-label col-sm-4 pt-0">Apakah kamu membutuhkan produk yang melembabkan bibir?</legend>
+              <div class="col-sm-8">
+                <div class="form-check form-check-inline">
+                  <input class="form-check-input" type="radio" name="moisturizing" id="moisturizing_yes" value="1" checked>
+                  <label class="form-check-label" for="moisturizing_yes">
+                    Ya
+                  </label>
+                </div>
+                <div class="form-check form-check-inline">
+                  <input class="form-check-input" type="radio" name="moisturizing" id="moisturizing_no" value="0">
+                  <label class="form-check-label" for="moisturizing_no">
+                    Tidak
+                  </label>
+                </div>
+              </div>
+            </fieldset>
+            <fieldset class="row">
+              <legend class="col-form-label col-sm-4 pt-0">Apakah produk harus bisa tahan lama?</legend>
+              <div class="col-sm-8">
+                <div class="form-check form-check-inline">
+                  <input class="form-check-input" type="radio" name="longlasting" id="longlasting_yes" value="1" checked>
+                  <label class="form-check-label" for="longlasting_yes">
+                    Ya
+                  </label>
+                </div>
+                <div class="form-check form-check-inline">
+                  <input class="form-check-input" type="radio" name="longlasting" id="longlasting_no" value="0">
+                  <label class="form-check-label" for="longlasting_no">
+                    Tidak
+                  </label>
+                </div>
+              </div>
+            </fieldset>
+            <!-- vania -->
+            <fieldset class="row">
+              <legend class="col-form-label col-sm-4 pt-0">Apakah kamu membutuhkan produk yang transferproof?</legend>
+              <div class="col-sm-8">
+                <div class="form-check form-check-inline">
+                  <input class="form-check-input" type="radio" name="transferproof" id="transferproof_yes" value="1" checked>
+                  <label class="form-check-label" for="transferproof_yes">
+                    Ya
+                  </label>
+                </div>
+                <div class="form-check form-check-inline">
+                  <input class="form-check-input" type="radio" name="transferproof" id="transferproof_no" value="0">
+                  <label class="form-check-label" for="transferproof_no">
+                    Tidak
+                  </label>
+                </div>
+              </div>
+          </fieldset>
+            <fieldset class="row">
+              <legend class="col-form-label col-sm-4 pt-0">Apakah kamu membutuhkan produk dengan hasil akhir glossy?</legend>
+              <div class="col-sm-8">
+                <div class="form-check form-check-inline">
+                  <input class="form-check-input" type="radio" name="glossy" id="glossy_yes" value="1" checked>
+                  <label class="form-check-label" for="glossy_yes">
+                    Ya
+                  </label>
+                </div>
+                <div class="form-check form-check-inline">
+                  <input class="form-check-input" type="radio" name="glossy" id="glossy_no" value="0">
+                  <label class="form-check-label" for="glossy_no">
+                    Tidak
+                  </label>
+                </div>
+              </div>
+          </fieldset>
+            <fieldset class="row">
+              <legend class="col-form-label col-sm-4 pt-0">Apakah membutuhkan produk yang high pigmented?</legend>
+              <div class="col-sm-8">
+                <div class="form-check form-check-inline">
+                  <input class="form-check-input" type="radio" name="intense" id="intense_yes" value="1" checked>
+                  <label class="form-check-label" for="intense_yes">
+                    Ya
+                  </label>
+                </div>
+                <div class="form-check form-check-inline">
+                  <input class="form-check-input" type="radio" name="intense" id="intense_no" value="0">
+                  <label class="form-check-label" for="intense_no">
+                    Tidak
+                  </label>
+                </div>
+              </div>
+          </fieldset>
+            <fieldset class="row">
+              <legend class="col-form-label col-sm-4 pt-0">Apakah membutuhkan produk yang mengandung bahan dasar air?</legend>
+              <div class="col-sm-8">
+                <div class="form-check form-check-inline">
+                  <input class="form-check-input" type="radio" name="watery" id="watery_yes" value="1" checked>
+                  <label class="form-check-label" for="watery_yes">
+                    Ya
+                  </label>
+                </div>
+                <div class="form-check form-check-inline">
+                  <input class="form-check-input" type="radio" name="watery" id="watery_no" value="0">
+                  <label class="form-check-label" for="watery_no">
+                    Tidak
+                  </label>
+                </div>
+              </div>
+          </fieldset>
+            <fieldset class="row">
+              <legend class="col-form-label col-sm-4 pt-0">Apakah membutuhkan produk yang tidak lengket?</legend>
+              <div class="col-sm-8">
+                <div class="form-check form-check-inline">
+                  <input class="form-check-input" type="radio" name="nonsticky" id="nonsticky_yes" value="1" checked>
+                  <label class="form-check-label" for="nonsticky_yes">
+                    Ya
+                  </label>
+                </div>
+                <div class="form-check form-check-inline">
+                  <input class="form-check-input" type="radio" name="nonsticky" id="nonsticky_no" value="0">
+                  <label class="form-check-label" for="nonsticky_no">
+                    Tidak
+                  </label>
+                </div>
+              </div>
+          </fieldset>
+            <fieldset class="row">
+              <legend class="col-form-label col-sm-4 pt-0">Apakah membutuhkan produk yang memberi hasil mousse?</legend>
+              <div class="col-sm-8">
+                <div class="form-check form-check-inline">
+                  <input class="form-check-input" type="radio" name="mousse" id="mousse_yes" value="1" checked>
+                  <label class="form-check-label" for="mousse_yes">
+                    Ya
+                  </label>
+                </div>
+                <div class="form-check form-check-inline">
+                  <input class="form-check-input" type="radio" name="mousse" id="mousse_no" value="0">
+                  <label class="form-check-label" for="mousse_no">
+                    Tidak
+                  </label>
+                </div>
+              </div>
+          </fieldset>
+            <fieldset class="row">
+              <legend class="col-form-label col-sm-4 pt-0">Apakah membutuhkan produk yang mengandung UV Protection?</legend>
+              <div class="col-sm-8">
+                <div class="form-check form-check-inline">
+                  <input class="form-check-input" type="radio" name="uvprotection" id="uvprotection_yes" value="1" checked>
+                  <label class="form-check-label" for="uvprotection_yes">
+                    Ya
+                  </label>
+                </div>
+                <div class="form-check form-check-inline">
+                  <input class="form-check-input" type="radio" name="uvprotection" id="uvprotection_no" value="0">
+                  <label class="form-check-label" for="uvprotection_no">
+                    Tidak
+                  </label>
+                </div>
+              </div>
+            </fieldset>
+            <fieldset class="row">
+              <legend class="col-form-label col-sm-4 pt-0">Apakah membutuhkan produk yang berbentuk crayon?</legend>
+              <div class="col-sm-8">
+                <div class="form-check form-check-inline">
+                  <input class="form-check-input" type="radio" name="crayon" id="crayon_yes" value="1" checked>
+                  <label class="form-check-label" for="crayon_yes">
+                    Ya
+                  </label>
+                </div>
+                <div class="form-check form-check-inline">
+                  <input class="form-check-input" type="radio" name="crayon" id="crayon_no" value="0">
+                  <label class="form-check-label" for="crayon_no">
+                    Tidak
+                  </label>
+                </div>
+              </div>
+            </fieldset>
+            <fieldset class="row">
+              <legend class="col-form-label col-sm-4 pt-0">Apakah membutuhkan produk yang berbentuk clickpen?</legend>
+              <div class="col-sm-8">
+                <div class="form-check form-check-inline">
+                  <input class="form-check-input" type="radio" name="clickpen" id="clickpen_yes" value="1" checked>
+                  <label class="form-check-label" for="clickpen_yes">
+                    Ya
+                  </label>
+                </div>
+                <div class="form-check form-check-inline">
+                  <input class="form-check-input" type="radio" name="clickpen" id="clickpen_no" value="0">
+                  <label class="form-check-label" for="clickpen_no">
+                    Tidak
+                  </label>
+                </div>
+              </div>
+            </fieldset>
+            <fieldset class="row">
+              <legend class="col-form-label col-sm-4 pt-0">Apakah membutuhkan produk dengan hasil akhir velvety?</legend>
+              <div class="col-sm-8">
+                <div class="form-check form-check-inline">
+                  <input class="form-check-input" type="radio" name="velvety" id="velvety_yes" value="1" checked>
+                  <label class="form-check-label" for="velvety_yes">
+                    Ya
+                  </label>
+                </div>
+                <div class="form-check form-check-inline">
+                  <input class="form-check-input" type="radio" name="velvety" id="velvety_no" value="0">
+                  <label class="form-check-label" for="velvety_no">
+                    Tidak
+                  </label>
+                </div>
+              </div>
+            </fieldset>
+            <fieldset class="row">
+              <legend class="col-form-label col-sm-4 pt-0">Apakah membutuhkan produk memiliki finish yang matte?</legend>
+              <div class="col-sm-8">
+                <div class="form-check form-check-inline">
+                  <input class="form-check-input" type="radio" name="matte" id="matte_yes" value="1" checked>
+                  <label class="form-check-label" for="matte_yes">
+                    Ya
+                  </label>
+                </div>
+                <div class="form-check form-check-inline">
+                  <input class="form-check-input" type="radio" name="matte" id="matte_no" value="0">
+                  <label class="form-check-label" for="matte_no">
+                    Tidak
+                  </label>
+                </div>
+              </div>
+            </fieldset>
+            <fieldset class="row">
+              <legend class="col-form-label col-sm-4 pt-0">Apakah membutuhkan produk memiliki finish yang semi matte?</legend>
+              <div class="col-sm-8">
+                <div class="form-check form-check-inline">
+                  <input class="form-check-input" type="radio" name="semimatte" id="semimatte_yes" value="1" checked>
+                  <label class="form-check-label" for="semimatte_yes">
+                    Ya
+                  </label>
+                </div>
+                <div class="form-check form-check-inline">
+                  <input class="form-check-input" type="radio" name="semimatte" id="semimatte_no" value="0">
+                  <label class="form-check-label" for="semimatte_no">
+                    Tidak
+                  </label>
+                </div>
+              </div>
+            </fieldset>
+            <div class="row">
+              <div class="col-sm-4">
+
+              </div>
+              <div class="col-sm-8">
+                <input type="submit" class="btn-lg btn-primary" value="Tampilkan Hasil" formaction="/clustering">
+              </div>
+            </div>
+          </form>
+<br>
+        {% if submitted %}
+          {% if result == "" %}
+            <div class="alert alert-dismissible alert-warning fade show">
+              <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
+              <h4 class="alert-heading">Hasil</h4>
+              <p class="mb-0">Tidak ada produk yang sesuai dengan preferensimu.</p>
+            </div>
+          {% else %}
+            <div class="alert alert-dismissible alert-primary fade show">
+              <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
+              <h4 class="alert-heading">Hasil</h4>
+              <p class="mb-0">{{ result }}</p>
+              <p class="mb-0">{{ inputan }}</p>
+
+              <br>
+              <button type="button" class="btn btn-primary"><a href="https://shopee.co.id/search?keyword={{ '%20'.join(result.split())}}" target="_blank" style="text-decoration: none;">Cari di Shopee</a></button>
+              <button type="button" class="btn btn-primary"><a href="https://tokopedia.com/search?q={{ '%20'.join(result.split())}}" target="_blank" style="text-decoration: none;">Cari di Tokopedia</a></button>
+            </div>
+        {% endif %}
+    {% else %}
+    <!-- Belum disubmit jadi gaada apa2 -->
+    {% endif %}
+    </div>
+
+
+</body>
+</html>
