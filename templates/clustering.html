@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/combine/npm/bootswatch@5.1.3/dist/quartz/bootstrap.min.css,npm/bootswatch@5.1.3/dist/quartz/bootstrap.min.css">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"></script>
     
-    <title>Skincare Clustering</title>
+    <title>The Skincare App</title>
 </head>
 <body>
     <!-- title -->
@@ -21,7 +21,7 @@
         <form method="POST" enctype="multipart/form-data">
             <!-- TODO ganti legend semuanya -->
             <fieldset class="row">
-                <legend class="col-form-label col-sm-4 pt-0">Apakah kamu membutuhkan produk yang dapat digunakan setiap hari?</legend>
+                <legend class="col-form-label col-sm-4 pt-0">Apakah produk skincare cocok untuk tipe kulit kering (dry)?</legend>
                 <div class="col-sm-8">
                   <div class="form-check form-check-inline">
                     <input class="form-check-input" type="radio" name="dailyuse" id="dailyuse_yes" value="1" checked>
@@ -38,7 +38,7 @@
                 </div>
             </fieldset>
             <fieldset class="row">
-                <legend class="col-form-label col-sm-4 pt-0">Apakah kamu membutuhkan produk yang ringan saat digunakan?</legend>
+                <legend class="col-form-label col-sm-4 pt-0">Apakah produk skincare cocok untuk tipe kulit sensitif?</legend>
                 <div class="col-sm-8">
                   <div class="form-check form-check-inline">
                     <input class="form-check-input" type="radio" name="lightweight" id="lightweight_yes" value="1" checked>
@@ -55,7 +55,7 @@
                 </div>
             </fieldset>
             <fieldset class="row">
-              <legend class="col-form-label col-sm-4 pt-0">Apakah kamu membutuhkan produk yang powdery?</legend>
+              <legend class="col-form-label col-sm-4 pt-0">Apakah produk skincare cocok untuk tipe kulit oily (berminyak)?</legend>
               <div class="col-sm-8">
                 <div class="form-check form-check-inline">
                   <input class="form-check-input" type="radio" name="powdery" id="powdery_yes" value="1" checked>
@@ -72,7 +72,7 @@
               </div>
             </fieldset>
             <fieldset class="row">
-                <legend class="col-form-label col-sm-4 pt-0">Apakah produk harus bisa digunakan dengan produk lainnya?</legend>
+                <legend class="col-form-label col-sm-4 pt-0">Apakah produk skincare cocok untuk semua tipe kulit?</legend>
                 <div class="col-sm-8">
                   <div class="form-check form-check-inline">
                     <input class="form-check-input" type="radio" name="layered" id="layered_yes" value="1" checked>
@@ -89,7 +89,7 @@
                 </div>
             </fieldset>
             <fieldset class="row">
-              <legend class="col-form-label col-sm-4 pt-0">Apakah kamu membutuhkan produk yang lembut dan halus?</legend>
+              <legend class="col-form-label col-sm-4 pt-0">Apakah produk skincare memiliki efek untuk menghilangkan jerawat (acne free)?<legend>
               <div class="col-sm-8">
                 <div class="form-check form-check-inline">
                   <input class="form-check-input" type="radio" name="smooth" id="smooth_yes" value="1" checked>
@@ -106,7 +106,7 @@
               </div>
             </fieldset>
             <fieldset class="row">
-              <legend class="col-form-label col-sm-4 pt-0">Apakah kamu membutuhkan produk dengan hasil akhir creamy?</legend>
+              <legend class="col-form-label col-sm-4 pt-0">Apakah produk skincare memiliki efek mencegah tanda-tanda penuaan (anti-aging)?</legend>
               <div class="col-sm-8">
                 <div class="form-check form-check-inline">
                   <input class="form-check-input" type="radio" name="creamy" id="creamy_yes" value="1" checked>
@@ -123,7 +123,7 @@
               </div>
             </fieldset>
             <fieldset class="row">
-              <legend class="col-form-label col-sm-4 pt-0">Apakah kamu membutuhkan produk yang melembabkan bibir?</legend>
+              <legend class="col-form-label col-sm-4 pt-0">Apakah produk skincare memiliki efek mencerahkan (brightening)?</legend>
               <div class="col-sm-8">
                 <div class="form-check form-check-inline">
                   <input class="form-check-input" type="radio" name="moisturizing" id="moisturizing_yes" value="1" checked>
@@ -140,7 +140,7 @@
               </div>
             </fieldset>
             <fieldset class="row">
-              <legend class="col-form-label col-sm-4 pt-0">Apakah produk harus bisa tahan lama?</legend>
+              <legend class="col-form-label col-sm-4 pt-0">Apakah produk skincare memiliki efek untuk mengecilkan pori-pori (pore care)?</legend>
               <div class="col-sm-8">
                 <div class="form-check form-check-inline">
                   <input class="form-check-input" type="radio" name="longlasting" id="longlasting_yes" value="1" checked>
@@ -158,7 +158,7 @@
             </fieldset>
             <!-- vania -->
             <fieldset class="row">
-              <legend class="col-form-label col-sm-4 pt-0">Apakah kamu membutuhkan produk yang transferproof?</legend>
+              <legend class="col-form-label col-sm-4 pt-0">Apakah produk skincare memiliki efek untuk proteksi kulit dari sinar UV (UV protection)?</legend>
               <div class="col-sm-8">
                 <div class="form-check form-check-inline">
                   <input class="form-check-input" type="radio" name="transferproof" id="transferproof_yes" value="1" checked>
@@ -175,7 +175,7 @@
               </div>
           </fieldset>
             <fieldset class="row">
-              <legend class="col-form-label col-sm-4 pt-0">Apakah kamu membutuhkan produk dengan hasil akhir glossy?</legend>
+              <legend class="col-form-label col-sm-4 pt-0">Apakah produk skincare mengandung water?</legend>
               <div class="col-sm-8">
                 <div class="form-check form-check-inline">
                   <input class="form-check-input" type="radio" name="glossy" id="glossy_yes" value="1" checked>
@@ -192,7 +192,7 @@
               </div>
           </fieldset>
             <fieldset class="row">
-              <legend class="col-form-label col-sm-4 pt-0">Apakah membutuhkan produk yang high pigmented?</legend>
+              <legend class="col-form-label col-sm-4 pt-0">Apakah produk skincare mengandung cica?</legend>
               <div class="col-sm-8">
                 <div class="form-check form-check-inline">
                   <input class="form-check-input" type="radio" name="intense" id="intense_yes" value="1" checked>
@@ -209,7 +209,7 @@
               </div>
           </fieldset>
             <fieldset class="row">
-              <legend class="col-form-label col-sm-4 pt-0">Apakah membutuhkan produk yang mengandung bahan dasar air?</legend>
+              <legend class="col-form-label col-sm-4 pt-0">Apakah produk skincare mengandung salicylic acid?</legend>
               <div class="col-sm-8">
                 <div class="form-check form-check-inline">
                   <input class="form-check-input" type="radio" name="watery" id="watery_yes" value="1" checked>
@@ -226,7 +226,7 @@
               </div>
           </fieldset>
             <fieldset class="row">
-              <legend class="col-form-label col-sm-4 pt-0">Apakah membutuhkan produk yang tidak lengket?</legend>
+              <legend class="col-form-label col-sm-4 pt-0">Apakah produk skincare mengandung niacinamide?</legend>
               <div class="col-sm-8">
                 <div class="form-check form-check-inline">
                   <input class="form-check-input" type="radio" name="nonsticky" id="nonsticky_yes" value="1" checked>
@@ -243,7 +243,7 @@
               </div>
           </fieldset>
             <fieldset class="row">
-              <legend class="col-form-label col-sm-4 pt-0">Apakah membutuhkan produk yang memberi hasil mousse?</legend>
+              <legend class="col-form-label col-sm-4 pt-0">Apakah produk skincare mengandung ceramide?</legend>
               <div class="col-sm-8">
                 <div class="form-check form-check-inline">
                   <input class="form-check-input" type="radio" name="mousse" id="mousse_yes" value="1" checked>
@@ -260,7 +260,7 @@
               </div>
           </fieldset>
             <fieldset class="row">
-              <legend class="col-form-label col-sm-4 pt-0">Apakah membutuhkan produk yang mengandung UV Protection?</legend>
+              <legend class="col-form-label col-sm-4 pt-0">Apakah produk skincare mengandung allantoin?</legend>
               <div class="col-sm-8">
                 <div class="form-check form-check-inline">
                   <input class="form-check-input" type="radio" name="uvprotection" id="uvprotection_yes" value="1" checked>
@@ -277,7 +277,7 @@
               </div>
             </fieldset>
             <fieldset class="row">
-              <legend class="col-form-label col-sm-4 pt-0">Apakah membutuhkan produk yang berbentuk crayon?</legend>
+              <legend class="col-form-label col-sm-4 pt-0">Apakah produk skincare mengandung glycol?</legend>
               <div class="col-sm-8">
                 <div class="form-check form-check-inline">
                   <input class="form-check-input" type="radio" name="crayon" id="crayon_yes" value="1" checked>
@@ -294,7 +294,7 @@
               </div>
             </fieldset>
             <fieldset class="row">
-              <legend class="col-form-label col-sm-4 pt-0">Apakah membutuhkan produk yang berbentuk clickpen?</legend>
+              <legend class="col-form-label col-sm-4 pt-0">Apakah produk skincare mengandung retinol?</legend>
               <div class="col-sm-8">
                 <div class="form-check form-check-inline">
                   <input class="form-check-input" type="radio" name="clickpen" id="clickpen_yes" value="1" checked>
@@ -311,7 +311,7 @@
               </div>
             </fieldset>
             <fieldset class="row">
-              <legend class="col-form-label col-sm-4 pt-0">Apakah membutuhkan produk dengan hasil akhir velvety?</legend>
+              <legend class="col-form-label col-sm-4 pt-0">Apakah produk skincare mengandung glycerin?</legend>
               <div class="col-sm-8">
                 <div class="form-check form-check-inline">
                   <input class="form-check-input" type="radio" name="velvety" id="velvety_yes" value="1" checked>
@@ -328,7 +328,7 @@
               </div>
             </fieldset>
             <fieldset class="row">
-              <legend class="col-form-label col-sm-4 pt-0">Apakah membutuhkan produk memiliki finish yang matte?</legend>
+              <legend class="col-form-label col-sm-4 pt-0">Apakah produk skincare mengandung bakuchiol?</legend>
               <div class="col-sm-8">
                 <div class="form-check form-check-inline">
                   <input class="form-check-input" type="radio" name="matte" id="matte_yes" value="1" checked>
@@ -345,7 +345,7 @@
               </div>
             </fieldset>
             <fieldset class="row">
-              <legend class="col-form-label col-sm-4 pt-0">Apakah membutuhkan produk memiliki finish yang semi matte?</legend>
+              <legend class="col-form-label col-sm-4 pt-0">Apakah produk skincare mengandung panthenol?</legend>
               <div class="col-sm-8">
                 <div class="form-check form-check-inline">
                   <input class="form-check-input" type="radio" name="semimatte" id="semimatte_yes" value="1" checked>
@@ -381,6 +381,7 @@
           {% else %}
             <div class="alert alert-dismissible alert-primary fade show">
               <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
+              <!-- TODO harus ganti ini nanti -->
               <h4 class="alert-heading">Hasil</h4>
               <p class="mb-0">{{ result }}</p>
               <p class="mb-0">{{ inputan }}</p>

@@ -31,7 +31,7 @@ def clustering():
     else:
         submitted = False
         input_list = [0 for i in range(20)]
-    cluster_idx = get_cluster_joblib(input_list)
+    cluster_idx = get_cluster(input_list)
     return render_template('clustering.html',result=cluster_idx, submitted=submitted,inputan=input_list)
 
 if __name__ == "__main__":
