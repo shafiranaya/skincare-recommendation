@@ -3,15 +3,10 @@ import numpy as np
 import pickle
 import joblib
 
-def get_cluster_joblib(input_list):
-    to_predict_list = np.array(input_list).reshape(1,20)
-    loaded_model = joblib.load("kmeans.joblib")
-    result = loaded_model.predict(to_predict_list)
-    return result[0]
-
 def get_cluster(input_list):
     input_list = np.array(input_list).reshape(1,20)
-    loaded_model = pickle.load(open("kmeans.pkl","rb"))
+    model_path = "kmeans.pkl"
+    loaded_model = pickle.load(open(model_path,"rb"))
     result = loaded_model.predict(input_list)
     return result[0]
 
@@ -68,18 +63,9 @@ def get_recommendation(product_name_search):
 
         for n in range(len(data_by_type)):
             output.append(data_by_type.iloc[n])
-        # df = [str(i) for i in df]
 
-        # return output[:5]
-        # print(output)
-        # print (output[['product_name','brand','cos_sim']][:5])
         df_result = pd.DataFrame(output)[['product_name', 'brand','cos_sim']].head(5)
         
         
         recommendation = df_result.to_numpy().tolist()
-        # print(recommendation)
         return recommendation
-# hasil = get_recommendation("salah")
-# print("HASIL: ",hasil)
-# hasil = get_recommendation("Cica Night Cream 15gr")
-# print("HASIL: ",hasil)
