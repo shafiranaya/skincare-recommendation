@@ -3,7 +3,7 @@
 18219090 - Vania Alya Qonita  
 18219106 - Fathiyya Maghfirah Teddy
 
-**Deployment Link: https://prediksi-properti.herokuapp.com/**  
+**Deployment Link: https://skincarerecommendation.herokuapp.com/clustering**  
 
 ## Deskripsi Perusahan
 BeautyHaul merupakan #1 Curated Beauty e-Commerce yang ingin membuat pengalaman berbelanja Anda menjadi simple & cepat, semuanya dalam 1 click. Visi dari beautyhaul adalah membuat beauty ekosistem yang saling terintegrasi mulai dari Review, Blog, Forum, Penjualan dan Events. Misi dari beautyhaul adalah membantu semua orang menjadi cantik & mendapatkan produk-produk kecantikan terbaik yang telah dikurasi secara ketat dengan harga yang terjangkau dan membantu membesarkan lokal brand dari Indonesia untuk bisa masuk ke pasar internasional.
