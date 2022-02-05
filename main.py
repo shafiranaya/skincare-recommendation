@@ -73,3 +73,8 @@ def get_recommendation(product_name_search):
         
         recommendation = df_result.to_numpy().tolist()
         return recommendation
+
+def get_examples():
+    df = pd.read_csv('beautyhaulclean.csv')
+    examples = df.head(5)['product_name'].to_numpy().tolist()
+    return examples

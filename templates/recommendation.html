@@ -1,77 +1,125 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/combine/npm/bootswatch@5.1.3/dist/quartz/bootstrap.min.css,npm/bootswatch@5.1.3/dist/quartz/bootstrap.min.css">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/combine/npm/bootswatch@5.1.3/dist/quartz/bootstrap.min.css,npm/bootswatch@5.1.3/dist/quartz/bootstrap.min.css"
+    />
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"></script>
-    
+
     <title>The Skincare App</title>
-</head>
-<body>
+  </head>
+  <body>
     <!-- title -->
     <div class="text-secondary px-4 py-2 text-center">
       <div class="py-1">
         <h1 class="display-5 fw-bold">Skincare Recommendation</h1>
       </div>
     </div>
-
     <div class="container">
-        <form method="POST" enctype="multipart/form-data">
-            <fieldset>
-                <div class="form-group">
-                    <label for="inputProductName" class="form-label mt-4">Product name</label>
-                    <input type="text" class="form-control" id="inputProductName" aria-describedby="productNameHelp" placeholder="Enter product name" name="inputProductName">
-                  </div>
-            </fieldset>
-            <div class="row">
-              <div class="col-sm-4">
-
-              </div>
-              <div class="col-sm-8">
-                <input type="submit" class="btn-lg btn-primary" value="Tampilkan Hasil" formaction="/recommendation">
-              </div>
-            </div>
-          </form>
-<br>
-        {% if submitted %}
-          {% if result|length == 0 or result == None %}
-            <div class="alert alert-dismissible alert-warning fade show">
-              <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
-              <h4 class="alert-heading">Hasil</h4>
-              <p class="mb-0">Produk tidak tersedia pada dataset kami, silakan mencari produk lain.</p>
-            </div>
-          <!-- {% elif result == None %}
+      <form method="POST" enctype="multipart/form-data">
+        Input examples: {% for example in examples %}
+        <li>{{ example }}</li>
+        {% endfor %}
+        <fieldset>
+          <div class="form-group">
+            <label for="inputProductName" class="form-label mt-4"
+              >Product name</label
+            >
+            <input
+              type="text"
+              class="form-control"
+              id="inputProductName"
+              aria-describedby="productNameHelp"
+              placeholder="Enter product name"
+              name="inputProductName"
+            />
+          </div>
+        </fieldset>
+        <div class="row">
+          <div class="col-sm-4"></div>
+          <div class="col-sm-8">
+            <input
+              type="submit"
+              class="btn-lg btn-primary"
+              value="Tampilkan Hasil"
+              formaction="/recommendation"
+            />
+          </div>
+        </div>
+      </form>
+      <br />
+      {% if submitted %} {% if result|length == 0 or result == None %}
+      <div class="alert alert-dismissible alert-warning fade show">
+        <button
+          type="button"
+          class="btn-close"
+          data-bs-dismiss="alert"
+        ></button>
+        <h4 class="alert-heading">Hasil</h4>
+        <p class="mb-0">
+          Produk tidak tersedia pada dataset kami, silakan mencari produk lain.
+        </p>
+      </div>
+      <!-- {% elif result == None %}
           <div class="alert alert-dismissible alert-warning fade show">
             <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
             <h4 class="alert-heading">Hasil</h4>
             <p class="mb-0">ERROR: MASUK KE NONE</p>
           </div> -->
-          {% else %}
-            <div class="alert alert-dismissible alert-primary fade show">
-              <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
-              <h4 class="alert-heading">Hasil</h4>
-             
-                <p class="mb-0">Top 5 most similar products:</p>
-                <br>
-                <ol>
-                {% for item in result %}
-                    <li>{{ item[0] }} from <b class='text-primary'>{{ item[1] }}</b> - Similarity: {{ item[2] }}</li>
-                    <button type="button" class="btn btn-primary btn-sm"><a href="https://shopee.co.id/search?keyword={{ '%20'.join(item[0].split())}}" target="_blank" style="text-decoration: none;">Cari di Shopee</a></button>
-                    <button type="button" class="btn btn-primary btn-sm"><a href="https://tokopedia.com/search?q={{ '%20'.join(item[0].split())}}" target="_blank" style="text-decoration: none;">Cari di Tokopedia</a></button>
-                    <button type="button" class="btn btn-primary btn-sm"><a href="https://beautyhaul.com/search?q={{ '%20'.join(item[0].split())}}" target="_blank" style="text-decoration: none;">Cari di BeautyHaul</a></button>
-                    <br>
-                    {% endfor %}
-                </ol>
+      {% else %}
+      <div class="alert alert-dismissible alert-primary fade show">
+        <button
+          type="button"
+          class="btn-close"
+          data-bs-dismiss="alert"
+        ></button>
+        <h4 class="alert-heading">Hasil</h4>
 
-              <br>
-            </div>
-        {% endif %}
-    {% else %}
-    <!-- Belum disubmit jadi gaada apa2 -->
-    {% endif %}
+        <p class="mb-0">Top 5 most similar products:</p>
+        <br />
+        <ol>
+          {% for item in result %}
+          <li>
+            {{ item[0] }} from <b class="text-primary">{{ item[1] }}</b> -
+            Similarity: {{ item[2] }}
+          </li>
+          <button type="button" class="btn btn-primary btn-sm">
+            <a
+              href="https://shopee.co.id/search?keyword={{ '%20'.join(item[0].split())}}"
+              target="_blank"
+              style="text-decoration: none"
+              >Cari di Shopee</a
+            >
+          </button>
+          <button type="button" class="btn btn-primary btn-sm">
+            <a
+              href="https://tokopedia.com/search?q={{ '%20'.join(item[0].split())}}"
+              target="_blank"
+              style="text-decoration: none"
+              >Cari di Tokopedia</a
+            >
+          </button>
+          <button type="button" class="btn btn-primary btn-sm">
+            <a
+              href="https://beautyhaul.com/search?q={{ '%20'.join(item[0].split())}}"
+              target="_blank"
+              style="text-decoration: none"
+              >Cari di BeautyHaul</a
+            >
+          </button>
+          <br />
+          {% endfor %}
+        </ol>
+
+        <br />
+      </div>
+      {% endif %} {% else %}
+      <!-- Belum disubmit jadi gaada apa2 -->
+      {% endif %}
     </div>
-
-</body>
+  </body>
 </html>

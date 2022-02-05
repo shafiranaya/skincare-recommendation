@@ -18,8 +18,8 @@ def recommendation():
         submitted = True
     else:
         submitted = False
-
-    return render_template('recommendation.html',result=product_name, submitted=submitted,inputan=product_name_input)
+    examples = get_examples()
+    return render_template('recommendation.html',result=product_name, submitted=submitted,inputan=product_name_input,examples=examples)
 
 @app.route('/clustering', methods=['GET','POST'])
 def clustering():
